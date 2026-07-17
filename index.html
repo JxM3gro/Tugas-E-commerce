@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HR Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="loginPage" class="login-page">
+    <img class="login-logo" src="assets/improving-logo.svg" alt="Improving">
+    <img class="login-illustration" src="assets/login-illustration.svg" alt="Ilustrasi tim Human Resource">
+    <form id="loginForm" class="login-card" novalidate>
+      <h1 class="login-welcome">Hello,<br>Welcome back</h1>
+      <label class="login-field"><span class="sr-only">Email</span>
+        <input id="loginEmail" type="email" placeholder="Email">
+      </label>
+      <label class="login-field"><span class="sr-only">Password</span>
+        <input id="loginPassword" type="password" placeholder="Password">
+      </label>
+      <label class="login-role"><span>Role</span>
+        <select id="loginRole">
+          <option>Admin HR</option>
+          <option>Karyawan</option>
+        </select>
+      </label>
+      <p id="loginError" class="form-error"></p>
+      <button class="primary full" type="submit">Login</button>
+      <div class="check-row">
+        <label><input type="checkbox" id="rememberMe"> Ingat saya</label>
+        <button type="button" class="link-btn" id="fillAdmin">Isi Admin</button>
+      </div>
+    </form>
+    <span class="login-version">HR Software v1.0</span>
+  </section>
+
+  <section id="appShell" class="app-shell hidden">
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-brand">
+        <span>Improving</span>
+      </div>
+      <nav id="sideNav" class="side-nav"></nav>
+      <span class="sidebar-version">HR Software v1.0</span>
+    </aside>
+    <div id="overlay" class="overlay"></div>
+    <main class="main">
+      <header class="topbar">
+        <button id="menuToggle" class="icon-btn" title="Buka menu" aria-label="Buka menu"><i data-lucide="menu"></i></button>
+        <div class="page-context">
+          <h2 id="pageTitle">Dashboard</h2>
+          <p id="pageSubtitle">Ringkasan aktivitas HR perusahaan.</p>
+        </div>
+        <div class="top-actions">
+          <span id="topbarDate" class="topbar-date"></span>
+          <button id="quickAddEmployee" class="secondary admin-only"><i data-lucide="user-plus"></i><span>Karyawan</span></button>
+          <button class="icon-btn notification-btn" title="Notifikasi" aria-label="Notifikasi"><i data-lucide="bell"></i></button>
+          <button id="themeToggle" class="icon-btn" title="Mode terang/gelap" aria-label="Mode terang/gelap"><i data-lucide="moon"></i></button>
+          <button id="profileShortcut" class="profile-chip"></button>
+        </div>
+      </header>
+      <section id="content" class="content"></section>
+    </main>
+  </section>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-panel">
+      <div class="modal-head">
+        <h3 id="modalTitle">Modal</h3>
+        <button id="modalClose" class="icon-btn" title="Tutup" aria-label="Tutup"><i data-lucide="x"></i></button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
